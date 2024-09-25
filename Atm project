@@ -1,0 +1,114 @@
+package miniproject;
+import java.util.Scanner;
+
+
+public class Atm {
+	int pin=1234;
+	int amount=1000;
+	
+	void operation() {
+	System.out.println("1.deposit");
+	System.out.println("2.withdraw");
+	System.out.println("3.balance");
+	System.out.println("4.exit");
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter c value");
+	int c=sc.nextInt();
+	switch(c) {
+	case 1:
+	{
+		System.out.println("enter pin no");
+		int pinno=sc.nextInt();
+		if(pinno==pin) {
+			System.out.println("correct pin");
+			System.out.println("enter amount:");
+			int amount1=sc.nextInt();
+			this.amount=amount+amount1;
+			System.out.println("current balance is:"+ amount);
+			operation();
+		}
+		else {
+			System.out.println("incorrect pin");
+			operation();
+			
+		}
+		break;
+		
+	}
+		
+	case 2:
+	{
+		System.out.println("enter pin no");
+		int pinno=sc.nextInt();
+		if(pinno==pin) {
+			System.out.println("correct pin");
+			System.out.println("enter amount:");
+			int amount1=sc.nextInt();
+			if(amount1<=1000) {
+			amount=amount-amount1;
+			}
+			else {
+				System.out.println("invalid amount");
+			}
+			System.out.println("current balance is:"+ amount);
+			operation();
+		}
+		else {
+			System.out.println("incorrect pin");
+			operation();
+		
+		}
+		break;
+		}
+	
+	case 3:
+	{
+		System.out.println("enter pin no");
+		int pinno=sc.nextInt();
+		if(pinno==pin) {
+			System.out.println("balance amount is:"+amount);
+			operation();
+		}
+		else {
+			System.out.println("incorrect pin");
+			operation();
+		}
+		break;
+	}
+	
+	case 4:
+	{
+		break;
+	}
+		
+	default:
+	{
+		System.out.println("invalid card");
+		
+		
+	}
+	}
+	}
+	
+	
+
+
+
+	public static void main(String args[]) {
+		Atm ref=new Atm();
+		ref.operation();
+		
+	}
+	}
+	
+	
+
+			
+			
+			
+		
+		
+		
+	
+
+
